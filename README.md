@@ -1,2 +1,6 @@
 # Project Euler
-Im plementation of problems from https://projecteuler.net/ in golang. Following same solution schema from https://github.com/yuvalif/project_euler.
+Implementing Project Euler (https://projecteuler.net/) problems in golang.
+
+To build library: `go install` in `euler` subdirectory.
+
+To run: `go run problems.go` in `problems` subdirectory.

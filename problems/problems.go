@@ -9,5 +9,11 @@ func main() {
 
     fmt.Print("Problem 2 = ")
     fmt.Println(euler.Problem2())
+
+    fmt.Print("Problem 3 = ")
+    fmt.Println(euler.Problem3())
+
+    fmt.Print("Problem 4 = ")
+    fmt.Println(euler.Problem4())
 }
 

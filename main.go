@@ -17,3 +17,4 @@ func main() {
     fmt.Println(euler.Problem4())
 }
 
+

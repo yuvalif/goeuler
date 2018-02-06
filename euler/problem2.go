@@ -16,7 +16,8 @@ var psi = -1.0/phi
 // find the nth fibonacci number based on Binet's formula
 // see here: https://en.wikipedia.org/wiki/Fibonacci_number#Closed-form_expression
 func fibonacci(n uint) uint64 {
-    return uint64((math.Pow(phi, float64(n)) - math.Pow(psi, float64(n)))/sqrt_5)
+    return uint64((math.Pow(phi, float64(n)) - 
+        math.Pow(psi, float64(n)))/sqrt_5)
 }
 
 var log_sqrt_5 = math.Log(sqrt_5);

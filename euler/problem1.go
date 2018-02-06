@@ -25,13 +25,13 @@ func sum_of_multiples_under_n(m, n int) int {
 // greatest common divisor
 func gcd(x, y int) int {
     if x < y {
-        var tmp = y
+        tmp := y
         y = x
         x = tmp
     }
 
     for y > 0 {
-        var tmp = x%y
+        tmp := x%y
         x = y
         y = tmp
     }
@@ -45,6 +45,8 @@ func lcm(x, y int) int {
 
 func Problem1() int {
     // summaries the multiples of 3 and 5 under 1000, and removes the ones counted twice
-    return sum_of_multiples_under_n(3, 1000) + sum_of_multiples_under_n(5, 1000) - sum_of_multiples_under_n(lcm(3,5), 1000)
+    return sum_of_multiples_under_n(3, 1000) + 
+        sum_of_multiples_under_n(5, 1000) - 
+        sum_of_multiples_under_n(lcm(3,5), 1000)
 }
 

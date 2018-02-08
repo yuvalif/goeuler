@@ -15,6 +15,9 @@ func main() {
 
     fmt.Print("Problem 4 = ")
     fmt.Println(euler.Problem4())
+
+    fmt.Print("Problem 5 = ")
+    fmt.Println(euler.Problem5())
 }
 
 

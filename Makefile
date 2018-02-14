@@ -8,7 +8,7 @@ _PACKAGE = $(GOPATH)/bin/$(PACKAGE)
 _LIBPACKAGE = $(GOPATH)/pkg/$(addsuffix .a, $(addprefix lib, $(LIBPACKAGE)))
 _SAINT = $(GOPATH)/src/$(SAINT)
 
-.PHONY: all clean
+.PHONY: all clean test
 
 all: $(_PACKAGE)
 
@@ -20,6 +20,9 @@ $(_LIBPACKAGE): $(wildcard $(LIBPACKAGE)/*.go) $(_SAINT)
 
 $(_SAINT):
 	go get -u $(SAINT)
+
+test:
+	cd $(LIBPACKAGE) && $(GO) test
 
 clean:
 	rm -f $(_PACKAGE) $(_LIBPACKAGE)

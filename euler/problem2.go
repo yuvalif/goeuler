@@ -9,24 +9,31 @@ package euler
 
 import "math"
 
-var sqrt_5 = math.Sqrt(5)
-var phi = (1.0 + sqrt_5)/2.0
-var psi = -1.0/phi
+var sqrt_5 = math.Sqrt(5.0)
+var psi = -1.0/math.Phi
+
+func round(x float64) uint64 {
+    return uint64(math.Floor(x + 0.5))
+}
 
 // find the nth fibonacci number based on Binet's formula
 // see here: https://en.wikipedia.org/wiki/Fibonacci_number#Closed-form_expression
 func fibonacci(n uint) uint64 {
-    return uint64((math.Pow(phi, float64(n)) - 
-        math.Pow(psi, float64(n)))/sqrt_5)
+    float_n := float64(n)
+    return round((math.Pow(math.Phi, float_n) - math.Pow(psi, float_n))/sqrt_5)
 }
 
 var log_sqrt_5 = math.Log(sqrt_5);
-var log_phi = math.Log(phi);
+var log_phi = math.Log(math.Phi);
 
 // find the largets fibonacci number smaller than n (based on approximation)
 // see here: https://en.wikipedia.org/wiki/Fibonacci_number#Computation_by_rounding
-func find_nearest_fibonacci_index(n uint) uint {
-    return uint((math.Log(float64(n)) + log_sqrt_5)/log_phi)
+func find_nearest_fibonacci_index(n uint64) uint {
+    if n == 0 {
+        return 0
+    }
+    float_n := float64(n)
+    return uint(math.Floor(math.Log(float_n*sqrt_5 + 0.5)/log_phi))
 }
 
 func Problem2() uint64 {

@@ -4,6 +4,7 @@ package euler
 
 import "testing"
 
+// list of numbers to test
 var results = map[uint]uint64 {
     0: 0,
 	1: 1,

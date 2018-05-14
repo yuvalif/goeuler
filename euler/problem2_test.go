@@ -6,7 +6,12 @@ import "testing"
 
 var results = map[uint]uint64 {
     0: 0,
-    2: 1,
+	1: 1,
+	2: 1,
+	3: 2,
+	4: 3,
+	5: 5,
+	6: 8,
     10: 55,
     14: 377,
     20: 6765,
@@ -26,6 +31,10 @@ func Test_fibonacci(t *testing.T) {
 
 func Test_find_nearest_fibonacci_index(t *testing.T) {
     for expected, arg := range results {
+		// no point in checking for "1", since there are two options
+		if arg == 1 {
+			continue
+		}
         actual := find_nearest_fibonacci_index(arg)
         if actual != expected {
             t.Error("Expected", expected, "got", actual)
